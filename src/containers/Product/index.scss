@@ -1,0 +1,86 @@
+@mixin action-button {
+  position: absolute;
+  top: 10px;
+  padding: 0px 5px;
+  
+  >svg {
+    color: white;
+  }
+}
+
+.ecommerce-card {
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid #d8d8d8;
+  overflow: hidden;
+  border-radius: 0.8rem 0rem;
+  position: relative;
+
+  >img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    flex: 0.5;
+    @media ( max-width: 600px ) {
+      height: 150px; 
+    }
+  }
+
+  .ecommerce-card-add-to-cart {
+    @include action-button();
+    right: 7px;
+  }
+
+  .ecommerce-card-info {
+    @include action-button();
+    right: 45px;
+  }
+
+  .ecommerce-card-category {
+    font-size: 0.6em;
+    font-weight: bold;
+    background: #f1c40f;
+    text-transform: uppercase;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 7px 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 0.3rem 0rem;
+  }
+  
+  .ecommerce-card-cont {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+    .ecommerce-card-name {
+      font-weight: bold;
+      font-size: 1em;
+      margin-bottom: 0px;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      line-clamp: 1; 
+      -webkit-box-orient: vertical;
+      white-space: "nowrap";
+    }
+    .ecommerce-card-price-cont {
+      margin-left: auto;
+      min-width: max-content;
+      padding-left: 10px;
+      >svg {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+      }
+      font-size: 0.8em;
+      font-weight: 600;
+  
+    }
+  }
+}
